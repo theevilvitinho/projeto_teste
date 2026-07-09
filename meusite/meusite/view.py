@@ -1,4 +1,6 @@
+from django.shortcuts import render
 from django.http import HttpResponse
+
 
 def teste_view(request):
     return HttpResponse("<h1>Olá mundo! Esta é uma view de teste.</h1>")

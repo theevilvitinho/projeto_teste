@@ -5,7 +5,27 @@ from django.http import HttpResponse
 
 
 def tarefas_nome(request):
-    return HttpResponse("<h1>Aqui estão suas tarefas!</h1>")
+    nome = {
+        'nome': 'Vitor'
+
+    }
+    return render(request, 'pagetarefas/home.html', nome)
 
 def tarefas_adicionar(request):
-    return HttpResponse('<h1>Adicionar tarefas</h1><button>Adicionar tarefas</button>')
+    adicionar = {
+        'nome': 'à Página de Adicionar Tarefas'
+    }
+    return render(request, 'pagetarefas/adicionar.html', adicionar)
+
+def tarefas_editar(request):
+    editar = {
+        'nome': 'à Página de Editar Tarefas'
+    }
+    return render(request, 'pagetarefas/editar.html', editar)
+
+
+def tarefas_excluir(request):
+    excluir = {
+        'nome': 'à Página de Excluir Tarefas'
+    }
+    return render(request, 'pagetarefas/excluir.html', excluir)
