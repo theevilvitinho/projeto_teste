@@ -4,33 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarefas</title>
+    <style>
+        .tabelaTarefas{
+            border: 1px solid;
+            padding: 4px;
+        }
+
+        .tabelaTarefas tr td{
+            border: 1px solid;
+            padding: 4px;
+        }
+    </style>
 </head>
 <body>
     <h1>Seja bem-vindo {{nome}}  !</h1>
 
-    <ul>
-        <li><a href="{% url 'tarefas:adicionar' %}">Adicionar Tarefa</a></li>
-        <li><a href="{% url 'tarefas:editar' %}">Editar Tarefa</a></li>
-        <li><a href="{% url 'tarefas:excluir' %}">Excluir Tarefa</a></li>
-    </ul>
 
 
-    <table>
+
+    <p>Lista de tarefas:</p>
+
+    <table class="tabelaTarefas">
         <thead>
             <tr>
                 <th>Assunto</th>
                 <th>Descrição</th>
                 <th>Status</th>
-                <th>Data</th> 
+                <th>Data de Criação</th> 
             </tr>
         </thead>
         <tbody>
+            {% for tarefa in tarefas %}
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{tarefa.assunto}}</td>
+                <td>{{tarefa.descricao}}</td>
+                <td>{{tarefa.status}}</td>
+                <td>{{tarefa.data_criacao}}</td>
+                <td><a href="{% url 'tarefas:excluir' id=tarefa.id %}">Excluir</a></td>
+
             </tr>
+            {% endfor %}
             <tr>
                 <td></td>
                 <td></td>

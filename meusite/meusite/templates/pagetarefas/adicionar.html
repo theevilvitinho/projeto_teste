@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Tarefas</title>
+    <style>
+
+    </style>
 </head>
 <body>
         <h1>Seja bem-vindo {{nome}}  !</h1>
@@ -15,31 +18,12 @@
     </ul>
 
 
-    <table>
-        <thead>
-            <tr>
-                <th>Assunto</th>
-                <th>Descrição</th>
-                <th>Status</th>
-                <th>Data</th> 
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
+    <h1>Adicionar Tarefa 1.0</h1>
+    <form action="" method="post" class="formulario">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Adicionar</button>
+    </form>
 
-    
-    </table>
 </body>
 </html>
