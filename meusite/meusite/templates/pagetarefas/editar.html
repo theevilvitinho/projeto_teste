@@ -6,13 +6,15 @@
     <title>Editar Tarefas</title>
 </head>
 <body>
-        <h1>Seja bem-vindo {{nome}}  !</h1>
+    <h1>Seja bem-vindo {{nome}}  !</h1>
 
-    <ul>
-        <li><a href="{% url 'tarefas:home' %}">Home</a></li>
-        <li><a href="{% url 'tarefas:adicionar' %}">Adicionar Tarefa</a></li>
-        <li><a href="{% url 'tarefas:excluir' %}">Excluir Tarefa</a></li>
-    </ul>
+
+    <h1>Área de Edição</h1>
+    <form action="" method="post" class="edicao">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Editar</button>
+    </form>
 
 
 </body>

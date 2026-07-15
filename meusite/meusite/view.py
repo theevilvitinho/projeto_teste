@@ -7,6 +7,3 @@ def teste_view(request):
 
 def index_view(request):
     return HttpResponse("<h1>Bem-vindo à página inicial!</h1><p style='color: blue'>Este é um novo projeto</p>")
-
-def administracao_view(request):
-    return HttpResponse("Admin teste")

@@ -19,9 +19,12 @@
 <body>
     <h1>Seja bem-vindo {{nome}}  !</h1>
 
+    
+    <ul>
+        <li><a href="{% url 'tarefas:adicionar' %}">Adicionar Tarefa</a></li>
 
-
-
+    </ul>
+    
     <p>Lista de tarefas:</p>
 
     <table class="tabelaTarefas">
@@ -38,18 +41,15 @@
             <tr>
                 <td>{{tarefa.assunto}}</td>
                 <td>{{tarefa.descricao}}</td>
-                <td>{{tarefa.status}}</td>
+                <td>{% if tarefa.status %}Completo{% else %}Incompleto{% endif %}</td>
                 <td>{{tarefa.data_criacao}}</td>
                 <td><a href="{% url 'tarefas:excluir' id=tarefa.id %}">Excluir</a></td>
+                <td><a href="{% url 'tarefas:editar' id=tarefa.id %}">Editar</a></td>
 
             </tr>
             {% endfor %}
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+
+
         </tbody>
 
     
